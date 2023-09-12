@@ -9,7 +9,7 @@ let outputText = '';
 
 KEYS.forEach((KEY, index) => {
     const number = index < 9 ? '0' + (index + 1) : (index + 1);
-    const soundLocation = `../media/piano-keys/key${number}.mp3`
+    const soundLocation = `./media/piano-keys/key${number}.mp3`
     KEY.addEventListener('click', (e) => {
         e.preventDefault();
         console.log(KEY.innerText)
@@ -64,8 +64,4 @@ playBtn.addEventListener('click', (e) => {
 
 function playSound(soundLocation) {
     new Audio(soundLocation).play();
-}
-
-function delay(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
 }
