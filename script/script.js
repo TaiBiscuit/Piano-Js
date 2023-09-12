@@ -27,7 +27,7 @@ document.onkeydown = function (e) {
     KEYS.forEach((KEY, index) => {
         const number = index < 9 ? '0' + (index + 1) : (index + 1);
         if (KEY.innerText == am){
-            const soundLocation = `../media/piano-keys/key${number}.mp3`
+            const soundLocation = `./media/piano-keys/key${number}.mp3`
             playSound(soundLocation);
         }
     });
@@ -52,7 +52,7 @@ playBtn.addEventListener('click', (e) => {
             console.log(am)
             const number = index < 9 ? '0' + (index + 1) : (index + 1);
             if (KEYS.innerText == am){
-                const soundLocation = `../media/piano-keys/key${number}.mp3`
+                const soundLocation = `./media/piano-keys/key${number}.mp3`
                 playSound(soundLocation);
             }
             delay(1000)
@@ -64,4 +64,8 @@ playBtn.addEventListener('click', (e) => {
 
 function playSound(soundLocation) {
     new Audio(soundLocation).play();
+}
+
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
 }
