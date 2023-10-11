@@ -98,3 +98,55 @@ body{
 .name-inv{
     margin-left: 1rem;
 }
+
+.btns{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 0.5rem;
+    transition: all 0.1s;
+    color: white;
+    font-weight: 800;
+}
+
+.stop{
+    background-color: rgb(199, 15, 15);
+}
+
+.stop:hover{
+    background-color: rgb(73, 5, 5) ;
+}
+
+.recording{
+    background-color: rgb(17, 143, 17);
+}
+
+.recording:hover{
+    background-color: rgb(9, 88, 9);
+}
+
+.play{
+    background-color: rgb(14, 141, 141);
+}
+
+.play:hover{
+    background-color: rgb(2, 75, 75);
+}
+
+
+textarea{
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+}
