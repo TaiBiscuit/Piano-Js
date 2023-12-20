@@ -17,11 +17,12 @@ body{
     height: 412px;
     padding: 90px 30px 0 30px;
     border-radius: 10px;
-    background-color: blueviolet;
+    background: linear-gradient(90deg, rgba(4,1,55,1) 0%, rgba(36,3,68,1) 9%, rgba(103,0,213,1) 100%);
 }
 
 .keys{
     position: relative;
+    transition: all 0.2s;
 
 }
 
@@ -37,6 +38,10 @@ body{
     border: solid black 2px;
 }
 
+.white-key:hover{
+    background-color: lightgray;
+}
+
 .black-keys{
     display: flex;
     position: relative;
@@ -48,6 +53,10 @@ body{
     height: 180px;
     border-radius: 0 0 5px 5px;
     background-color: black;
+}
+
+.black-key:hover{
+    background-color: darkgray;
 }
 
 .black-key:nth-child(1){

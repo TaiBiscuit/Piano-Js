@@ -35,27 +35,35 @@ document.onkeydown = function (e) {
 
 recordBtn.addEventListener('click', (e) => {
     e.preventDefault();
+    outputText = '';
     recording = true;
+    recordBtn.style.backgroundColor='rgb(9, 88, 9)'
 });
 
 stopBtn.addEventListener('click', (e) => {
     e.preventDefault();
     recording = false;
+    textArea.value = '';
+    recordBtn.style.backgroundColor='rgb(17, 143, 17)'
 })
 
 playBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if(!recording){
         const outputToArray = outputText.split('');
-        outputToArray.forEach(KEY => {
-            const am = KEY
-            console.log(am)
-            const number = index < 9 ? '0' + (index + 1) : (index + 1);
-            if (KEYS.innerText == am){
-                const soundLocation = `./media/piano-keys/key${number}.mp3`
-                playSound(soundLocation);
-            }
-            delay(1000)
+        outputToArray.forEach(async (KEY, index) => {
+            let am = KEY
+            setTimeout(() => {
+                KEYS.forEach((KEY, index) => {
+                    const number = index < 9 ? '0' + (index + 1) : (index + 1);
+                    if (KEY.innerText == am){
+                        console.log('yes')
+                        const soundLocation = `./media/piano-keys/key${number}.mp3`
+                        playSound(soundLocation);
+                        
+                    }
+                });
+            }, index * 500);
         })
     } else {
         alert('Stop the recording first!')
